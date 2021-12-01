@@ -1,4 +1,4 @@
-﻿using System;
+﻿using AdventOfCode2021.Days;
 
 namespace AdventOfCode2021
 {
@@ -6,11 +6,8 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
-            var measurements = PuzzleInputService.GetDay1Part1();
-
-            var counter = new DepthCounter(measurements);
-
-            Console.WriteLine(counter.CalculateDepthIncreases());
+            Day1.Part1();
+            Day1.Part2();
         }
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace AdventOfCode2021
@@ -12,6 +11,29 @@ namespace AdventOfCode2021
         }
 
         public int CalculateDepthIncreases()
+        {
+            return CalculateIncreases(this.measurements);
+        }
+
+        public int CalculateThreeMeasurmentWindow()
+        {
+            var sums = new List<int>();
+
+            for (var i = 0; i < measurements.Count; i++)
+            {
+                if (i + 3 > measurements.Count)
+                {
+                    break;
+                }
+
+                var sum = measurements[i] + measurements[i + 1] + measurements[i + 2];
+                sums.Add(sum);
+            }
+
+            return CalculateIncreases(sums);
+        }
+
+        private int CalculateIncreases(List<int> measurements)
         {
             var increases = 0;
 

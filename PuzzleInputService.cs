@@ -21,5 +21,10 @@ namespace AdventOfCode2021
 
             return testInput;
         }
+
+        public static List<int> GetDay1Part2()
+        {
+            return GetDay1Part1();
+        }
     }
 }
