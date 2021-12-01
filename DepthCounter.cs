@@ -5,6 +5,7 @@ namespace AdventOfCode2021
     public class DepthCounter
     {
         private List<int> measurements;
+        
         public DepthCounter(List<int> measurements)
         {
             this.measurements = measurements;
