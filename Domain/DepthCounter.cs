@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 
-namespace AdventOfCode2021
+namespace AdventOfCode2021.Domain
 {
     public class DepthCounter
     {
         private List<int> measurements;
-        
+
         public DepthCounter(List<int> measurements)
         {
             this.measurements = measurements;
@@ -13,7 +13,7 @@ namespace AdventOfCode2021
 
         public int CalculateDepthIncreases()
         {
-            return CalculateIncreases(this.measurements);
+            return CalculateIncreases(measurements);
         }
 
         public int CalculateThreeMeasurmentWindow()

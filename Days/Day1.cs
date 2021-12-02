@@ -1,5 +1,8 @@
 using System;
 
+using AdventOfCode2021.Domain;
+using AdventOfCode2021.Services;
+
 namespace AdventOfCode2021.Days
 {
     public static class Day1
