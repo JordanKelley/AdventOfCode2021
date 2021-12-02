@@ -1,6 +1,6 @@
 namespace AdventOfCode2021.Domain.Enums
 {
-    public enum Command
+    public enum Instruction
     {
         down,
         forward,
