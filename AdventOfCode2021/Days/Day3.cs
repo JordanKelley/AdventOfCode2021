@@ -19,7 +19,13 @@ namespace AdventOfCode2021.Days
 
         public static int Part2()
         {
-            return 0;
+            var diagnostics = PuzzleInputService.GetDay3Part1();
+
+            var oxygenGenerator = new OxygenGenerator(diagnostics);
+
+            var co2Scrubber = new Co2Scrubber(diagnostics);
+
+            return oxygenGenerator.Calculate() * co2Scrubber.Calculate();
         }
     }
 }

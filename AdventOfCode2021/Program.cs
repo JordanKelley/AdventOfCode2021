@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using AdventOfCode2021.Days;
 
@@ -8,7 +9,7 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Day3.Part1());
+            Console.WriteLine(Day3.Part2());
         }
     }
 }
