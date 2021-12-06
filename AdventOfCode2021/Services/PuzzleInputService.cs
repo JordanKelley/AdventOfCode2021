@@ -44,5 +44,21 @@ namespace AdventOfCode2021.Services
 
             return testInput;
         }
+
+        public static List<string> GetDay3Part1()
+        {
+            var testInput = new List<string>();
+
+            using (var reader = new StreamReader("C:\\Users\\JMKELL\\Documents\\Repositories\\AdventOfCode2021\\AdventOfCode2021\\PuzzleInput\\Day3\\Part1.txt"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var input = reader.ReadLine();
+                    testInput.Add(input);
+                }
+            }
+
+            return testInput;
+        }
     }
 }

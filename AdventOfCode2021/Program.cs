@@ -1,4 +1,6 @@
-﻿using AdventOfCode2021.Days;
+﻿using System;
+
+using AdventOfCode2021.Days;
 
 namespace AdventOfCode2021
 {
@@ -6,11 +8,7 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
-            Day1.Part1();
-            Day1.Part2();
-
-            Day2.Part1();
-            Day2.Part2();
+            Console.WriteLine(Day3.Part1());
         }
     }
 }
