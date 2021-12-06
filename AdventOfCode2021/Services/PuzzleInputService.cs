@@ -9,7 +9,9 @@ namespace AdventOfCode2021.Services
         {
             var testInput = new List<int>();
 
-            using (var reader = new StreamReader("PuzzleInput\\Day1\\Part1.txt"))
+            var directory = Directory.GetCurrentDirectory();
+
+            using (var reader = new StreamReader(@"C:\Users\JMKELL\Documents\Repositories\AdventOfCode2021\AdventOfCode2021\PuzzleInput\Day1\Part1.txt"))
             {
                 while (!reader.EndOfStream)
                 {
@@ -30,7 +32,7 @@ namespace AdventOfCode2021.Services
         {
             var testInput = new List<(string, int)>();
 
-            using (var reader = new StreamReader("PuzzleInput\\Day2\\Part1.txt"))
+            using (var reader = new StreamReader("C:\\Users\\JMKELL\\Documents\\Repositories\\AdventOfCode2021\\AdventOfCode2021\\PuzzleInput\\Day2\\Part1.txt"))
             {
                 while (!reader.EndOfStream)
                 {
