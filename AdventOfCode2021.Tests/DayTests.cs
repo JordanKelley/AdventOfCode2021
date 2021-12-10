@@ -76,5 +76,15 @@ namespace AdventOfCode2021.Tests
 
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void Day4Part2IsCorrect()
+        {
+            var expected = 7075;
+
+            var result = Day4.Part2();
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }

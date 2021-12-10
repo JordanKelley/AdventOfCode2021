@@ -15,5 +15,16 @@ namespace AdventOfCode2021.Days
 
             return winner.SumOfUnmarkedNumbers() * winner.LastNumberCalled;
         }
+
+        public static int Part2()
+        {
+            var data = PuzzleInputService.GetDay4BingoData();
+
+            var game = new BingoGame(data);
+
+            var lastWinner = game.GetLastWinner();
+
+            return lastWinner.SumOfUnmarkedNumbers() * lastWinner.LastNumberCalled;
+        }
     }
 }
