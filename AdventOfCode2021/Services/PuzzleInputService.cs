@@ -1,5 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+
+using AdventOfCode2021.Data;
 
 namespace AdventOfCode2021.Services
 {
@@ -59,6 +63,76 @@ namespace AdventOfCode2021.Services
             }
 
             return testInput;
+        }
+
+        public static BingoData GetDay4BingoData()
+        {
+            var numbers = new List<int>();
+            var boards = new List<BingoBoard>();
+
+            using (var reader = new StreamReader("C:\\Users\\JMKELL\\Documents\\Repositories\\AdventOfCode2021\\AdventOfCode2021\\PuzzleInput\\Day4\\Part1.txt"))
+            {
+                numbers = GetDay4BingoNumbers(reader);
+                boards = GetDay4BingoBoards(reader);
+            }
+
+            return new BingoData(numbers, boards);
+        }
+
+        private static List<int> GetDay4BingoNumbers(StreamReader reader)
+        {
+            var numbers = new List<int>();
+
+            var inputs = reader.ReadLine().Split(",");
+
+            foreach (var input in inputs)
+            {
+                numbers.Add(int.Parse(input));
+            }
+
+            return numbers;
+        }
+
+        private static List<BingoBoard> GetDay4BingoBoards(StreamReader reader)
+        {
+            var boards = new List<BingoBoard>();
+
+            while (!reader.EndOfStream)
+            {
+                var input = reader.ReadLine();
+
+                if (input.Length != 0)
+                {
+                    var board = new int[5][];
+
+                    for (var i = 0; i < 5; i++)
+                    {
+                        board[i] = GetRow(input);
+                        input = reader.ReadLine();
+                    }
+
+                    boards.Add(new BingoBoard(board));
+                }
+            }
+
+            return boards;
+        }
+
+        private static int[] GetRow(string input)
+        {
+            var row = new int[5];
+            var count = 0;
+
+            var nums = input.Split(" ").Where(x => !string.IsNullOrEmpty(x));
+
+            foreach(var num in nums)
+            {
+                row[count] = int.Parse(num);
+
+                count++;
+            }
+
+            return row;
         }
     }
 }
