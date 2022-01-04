@@ -52,6 +52,50 @@ namespace AdventOfCode2021.Domain
                 var endYCoordinate = Math.Max(line.FromCoordinate.Item2, line.ToCoordinate.Item2);
                 ApplyVerticalLine(line.FromCoordinate.Item1, begginningYCoordinate, endYCoordinate);
             }
+            else if (line.IsDiagonal)
+            {
+                ApplyDiagonalLine(line);
+            }
+        }
+
+        private void ApplyDiagonalLine(Line line)
+        {
+            // (0,1) (2,3) => (0,1) (1,2) (2,3)
+            // x
+            //  x
+            //   x
+
+            // (1,2) (3,0) => (1,2) (2,1) (3,0)
+            //     x
+            //    x
+            //   x
+            // 
+
+            var beginningCoordinate = line.FromCoordinate.Item1 < line.ToCoordinate.Item1 ? line.FromCoordinate : line.ToCoordinate;
+            var endingCoordinate = line.FromCoordinate.Item1 > line.ToCoordinate.Item1 ? line.FromCoordinate : line.ToCoordinate;
+            var yDifference = beginningCoordinate.Item2 - endingCoordinate.Item2;
+
+            var endOfLine = false;
+            this.grid[beginningCoordinate.Item1, beginningCoordinate.Item2]++;
+            while (!endOfLine)
+            {
+                if (yDifference < 0)
+                {
+                    beginningCoordinate.Item1++;
+                    beginningCoordinate.Item2++;
+                    this.grid[beginningCoordinate.Item1, beginningCoordinate.Item2]++;
+                }
+                else 
+                {
+                    beginningCoordinate.Item1++;
+                    beginningCoordinate.Item2--;
+                    this.grid[beginningCoordinate.Item1, beginningCoordinate.Item2]++;
+                }
+                if (beginningCoordinate.Item1 == endingCoordinate.Item1 && beginningCoordinate.Item2 == endingCoordinate.Item2)
+                {
+                    endOfLine = true;
+                }
+            }
         }
 
         private void ApplyHorizontalLine(int yCoordinate, int beginningXCoordinate, int endXCoordinate)

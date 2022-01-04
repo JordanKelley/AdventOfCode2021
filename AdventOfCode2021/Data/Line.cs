@@ -15,6 +15,15 @@ namespace AdventOfCode2021.Data
                 return false;
             }
         }
+
+        public bool IsDiagonal
+        {
+            get
+            {
+                return !this.IsHorizontal && !this.IsVertical;
+            }
+        }
+
         public bool IsVertical
         {
             get 

@@ -13,5 +13,14 @@ namespace AdventOfCode2021.Days
 
             return grid.CalculatePointsOfOverlap();
         }
+
+        public static int Part2()
+        {
+            var lines = PuzzleInputService.GetDay5Part1();
+
+            var grid = new Grid(lines);
+
+            return grid.CalculatePointsOfOverlap();
+        }
     }
 }
