@@ -9,7 +9,7 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
-            var result = Day4.Part2();
+            var result = Day5.Part1();
         }
     }
 }

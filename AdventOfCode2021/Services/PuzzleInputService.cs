@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -77,6 +76,28 @@ namespace AdventOfCode2021.Services
             }
 
             return new BingoData(numbers, boards);
+        }
+
+        public static List<Line> GetDay5Part1()
+        {
+            var lines = new List<Line>();
+
+            using (var reader = new StreamReader("C:\\Users\\JMKELL\\Documents\\Repositories\\AdventOfCode2021\\AdventOfCode2021\\PuzzleInput\\Day5\\Part1.txt"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var input = reader.ReadLine().Replace(" -> ", ",").Split(",");
+                    
+                    var fromCoordinate = (int.Parse(input[0]), int.Parse(input[1]));
+                    var toCoordinate = (int.Parse(input[2]), int.Parse(input[3]));
+                    var line = new Line(fromCoordinate, toCoordinate);
+
+                    lines.Add(line);
+                }
+            }
+
+            return lines;
+
         }
 
         private static List<int> GetDay4BingoNumbers(StreamReader reader)
